@@ -32,14 +32,14 @@ def get_load_data(root = "data", dataset = "FashionMNIST", download = False):
 
         test_data = datasets.Flowers102(
             root=root,
-            split = "test",
+            split = "train",
             download=False,
             transform=Compose([Resize((128,128)), ToTensor()])
         )
     return training_data, test_data
 
 if __name__ == "__main__":
-    train, test = get_load_data()
+    train, test = get_load_data(root = "../data")
     img, label = train[1]
     plt.imshow(img.squeeze(), cmap="gray")
     plt.show()
