@@ -15,11 +15,16 @@ def validation(model, val_set):
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     model = model.to(device)
+
     with tqdm(val_dataloader) as tepoch:
+
         for imgs, labels in tepoch:
+
             y_true.extend(labels.numpy())
+            
             with torch.no_grad():
                 out = model(imgs.to(device))
+
             y_pred.extend(torch.argmax(out,1).cpu().numpy())
             loss = loss_function(out, labels.to(device))    
 

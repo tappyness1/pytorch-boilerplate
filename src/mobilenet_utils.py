@@ -17,6 +17,7 @@ class ResidualBottleneckBlock(nn.Module):
         else: 
             padding = 1
 
+
         self.expansion = Conv2d(in_channels = in_channels, out_channels = expansion_out, kernel_size = 1)
         self.depthwise = Conv2d(in_channels = expansion_out, out_channels = expansion_out, kernel_size = 3, groups = expansion_out, stride = dw_stride, padding = padding)
         self.projection = Conv2d(in_channels = expansion_out, out_channels = point_out, kernel_size = 1)

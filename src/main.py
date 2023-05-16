@@ -22,4 +22,4 @@ def train_model_hptuning(cfg : DictConfig):
 
 if __name__ == "__main__":
     # train_model()
-    train_model_hptuning() # remember to use --multirun flag
+    train_model_hptuning() # remember to use --multirun flag if it is not turned on in the yaml
