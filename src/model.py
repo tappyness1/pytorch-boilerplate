@@ -48,5 +48,5 @@ if __name__ == "__main__":
 
     X = torch.tensor(X)
 
-    model = Network(num_classes= 3, variant = "ResNet34")
+    model = Network(num_classes= 3)
     print (model.forward(X))
