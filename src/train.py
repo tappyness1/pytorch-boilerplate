@@ -1,10 +1,12 @@
 import torch.nn as nn
-from src.model import Network
+from src.model import MobileNetV1, Network, MobileNetV2
 import torch.optim as optim
 import torch
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 from torchsummary import summary
+import hydra
+from omegaconf import DictConfig, OmegaConf
 
 def train(train_set, cfg, in_channels = 3, num_classes = 10):
 

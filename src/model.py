@@ -44,7 +44,7 @@ if __name__ == "__main__":
     np.random.seed(42)
     torch.manual_seed(42)    
 
-    X = np.random.rand(5, 3, 32, 32).astype('float32')
+    X = np.random.rand(5, 3, 224, 224).astype('float32')
 
     X = torch.tensor(X)
 
